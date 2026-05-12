@@ -1,12 +1,316 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Código de Deus</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Código de Deus | Clareza Bíblica</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0d0d0d;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #f5c542;
+    }
+
+    .hero {
+      padding: 70px 0 50px;
+      text-align: center;
+      background: radial-gradient(circle at top, #2a2413 0%, #0d0d0d 55%);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #f5c542;
+      color: #f5c542;
+      border-radius: 30px;
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-size: 46px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      font-size: 20px;
+      color: #d8d8d8;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #f5c542;
+      color: #111111;
+      padding: 18px 34px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #ffd866;
+      transform: scale(1.03);
+    }
+
+    .warning {
+      margin-top: 16px;
+      font-size: 14px;
+      color: #bdbdbd;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .dark-box {
+      background: #171717;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 35px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 34px;
+      margin-bottom: 18px;
+      color: #f5c542;
+    }
+
+    .text {
+      font-size: 18px;
+      color: #d6d6d6;
+      margin-bottom: 18px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #171717;
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 26px;
+      border-radius: 16px;
+    }
+
+    .card h3 {
+      color: #f5c542;
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #d0d0d0;
+      font-size: 16px;
+    }
+
+    .video-box {
+      background: #000000;
+      border: 1px solid rgba(245,197,66,0.35);
+      border-radius: 18px;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .video-box h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .video-box p {
+      color: #cfcfcf;
+      margin-bottom: 24px;
+    }
+
+    .offer {
+      background: linear-gradient(135deg, #1c1608, #0d0d0d);
+      border-top: 1px solid rgba(245,197,66,0.3);
+      border-bottom: 1px solid rgba(245,197,66,0.3);
+      text-align: center;
+    }
+
+    .offer ul {
+      list-style: none;
+      max-width: 650px;
+      margin: 25px auto;
+      text-align: left;
+    }
+
+    .offer li {
+      padding: 12px 0;
+      color: #e6e6e6;
+      font-size: 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .offer li::before {
+      content: "✓ ";
+      color: #f5c542;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: #999999;
+      font-size: 14px;
+      background: #090909;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 45px 0;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding: 60px;">
-  <h1>Código de Deus</h1>
-  <p>Site publicado com sucesso.</p>
+
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">Código de Deus</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="tag">Clareza bíblica • Direção espiritual • Entendimento</span>
+
+      <h1>Você lê a Bíblia, mas sente que ainda não entende como deveria?</h1>
+
+      <p>
+        Descubra um método simples para organizar sua leitura, interpretar melhor as Escrituras
+        e enxergar o texto bíblico com mais clareza, contexto e propósito.
+      </p>
+
+      <a class="btn" href="#video">Assistir apresentação agora</a>
+
+      <div class="warning">
+        Uma explicação direta para quem deseja sair da confusão e ler a Bíblia com mais entendimento.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="dark-box">
+        <h2>O problema não é falta de fé. É falta de método.</h2>
+        <p class="text">
+          Muitas pessoas começam a ler a Bíblia com vontade, mas param porque não sabem por onde começar,
+          como entender o contexto ou como aplicar corretamente o que estão lendo.
+        </p>
+        <p class="text">
+          O Código de Deus foi criado para ajudar você a organizar esse processo de forma simples,
+          clara e prática.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>1. Clareza</h3>
+          <p>Entenda o texto com mais ordem, sem depender de interpretações confusas.</p>
+        </div>
+
+        <div class="card">
+          <h3>2. Contexto</h3>
+          <p>Aprenda a observar o cenário, o propósito e a mensagem central das passagens.</p>
+        </div>
+
+        <div class="card">
+          <h3>3. Aplicação</h3>
+          <p>Transforme sua leitura em entendimento prático para sua vida espiritual.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section" id="video">
+    <div class="container">
+      <div class="video-box">
+        <h3>Assista à apresentação</h3>
+        <p>
+          Veja como funciona o método e entenda por que tantas pessoas leem a Bíblia,
+          mas poucas conseguem interpretá-la com profundidade.
+        </p>
+
+        <a class="btn" href="COLE_AQUI_O_LINK_DA_SUA_VSL_OU_CHECKOUT">
+          Continuar para a apresentação
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section offer">
+    <div class="container">
+      <h2>O que você vai encontrar</h2>
+
+      <ul>
+        <li>Um caminho mais simples para começar a entender a Bíblia.</li>
+        <li>Um método organizado para evitar interpretações soltas.</li>
+        <li>Uma forma mais clara de conectar contexto, texto e aplicação.</li>
+        <li>Uma leitura com mais direção, propósito e profundidade.</li>
+      </ul>
+
+      <a class="btn" href="COLE_AQUI_O_LINK_DA_SUA_VSL_OU_CHECKOUT">
+        Quero acessar agora
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Código de Deus. Todos os direitos reservados.
+    </div>
+  </footer>
+
 </body>
 </html>
