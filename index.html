@@ -8,7 +8,25 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'AW-16451064761');
+  gtag('config', 'AW-16451064761'); 
+</script>
+  <!-- Event snippet for Clique de saída conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-16451064761/pYTmCNmnvKscELmnvaQ9',
+      'value': 1.0,
+      'currency': 'BRL',
+      'event_callback': callback
+  });
+  return false;
+}
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -285,7 +303,7 @@
   <header>
     <div class="container nav">
       <div class="logo">O Código de Deus</div>
-      <a class="btn-small" href="https://go.hotmart.com/W105412401D?ap=aef6">Assistir apresentação</a>
+<a class="btn-small" href="https://go.hotmart.com/W105412401D?ap=aef6" onclick="return gtag_report_conversion('https://go.hotmart.com/W105412401D?ap=aef6');">Assistir apresentação</a>
     </div>
   </header>
 
@@ -305,10 +323,9 @@
           Precisa de clareza, alinhamento espiritual e uma nova forma de enxergar os sinais que Deus já colocou diante dele.
         </p>
 
-        <a class="btn-main" href="https://go.hotmart.com/W105412401D?ap=aef6">
-          Quero entender o Código de Deus
-        </a>
-
+ <a class="btn-main" href="https://go.hotmart.com/W105412401D?ap=aef6" onclick="return gtag_report_conversion('https://go.hotmart.com/W105412401D?ap=aef6');">
+  Quero entender o Código de Deus
+</a>
         <div class="small-text">
           Assista à apresentação e descubra como essa jornada funciona.
         </div>
@@ -431,7 +448,7 @@
 
         <br />
 
-        <a class="btn-main" href="https://go.hotmart.com/W105412401D?ap=aef6">
+       <a class="btn-main" href="https://go.hotmart.com/W105412401D?ap=aef6" onclick="return gtag_report_conversion('https://go.hotmart.com/W105412401D?ap=aef6');">
           Acessar a apresentação agora
         </a>
 
