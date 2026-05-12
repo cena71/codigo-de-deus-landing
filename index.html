@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Código de Deus | Clareza Bíblica</title>
+  <title>O Mapa do Código | Ative o Código Dentro de Você</title>
 
   <style>
     * {
@@ -12,200 +12,398 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #0d0d0d;
+      background: #070707;
       color: #ffffff;
       line-height: 1.6;
     }
 
+    a {
+      text-decoration: none;
+    }
+
     .container {
       width: 92%;
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
     }
 
     header {
-      padding: 24px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(7, 7, 7, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
     .logo {
       font-size: 22px;
-      font-weight: bold;
-      color: #f5c542;
+      font-weight: 800;
+      color: #f4c542;
+      letter-spacing: 0.5px;
+    }
+
+    .mini-btn {
+      background: #f4c542;
+      color: #111;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 14px;
     }
 
     .hero {
-      padding: 70px 0 50px;
+      position: relative;
+      padding: 90px 0 75px;
       text-align: center;
-      background: radial-gradient(circle at top, #2a2413 0%, #0d0d0d 55%);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top, rgba(244, 197, 66, 0.22), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(112, 72, 255, 0.18), transparent 30%),
+        #070707;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      opacity: 0.35;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
     }
 
     .tag {
       display: inline-block;
-      padding: 8px 16px;
-      border: 1px solid #f5c542;
-      color: #f5c542;
-      border-radius: 30px;
+      padding: 9px 18px;
+      border: 1px solid rgba(244, 197, 66, 0.75);
+      color: #f4c542;
+      border-radius: 999px;
       font-size: 14px;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
+      background: rgba(244, 197, 66, 0.08);
     }
 
     h1 {
-      font-size: 46px;
-      line-height: 1.15;
-      margin-bottom: 20px;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.05;
+      max-width: 980px;
+      margin: 0 auto 24px;
+      letter-spacing: -1.7px;
     }
 
-    .hero p {
-      max-width: 760px;
-      margin: 0 auto 28px;
-      font-size: 20px;
-      color: #d8d8d8;
+    .gold {
+      color: #f4c542;
+    }
+
+    .hero-text {
+      max-width: 820px;
+      margin: 0 auto 34px;
+      font-size: 21px;
+      color: #dddddd;
     }
 
     .btn {
       display: inline-block;
-      background: #f5c542;
+      background: linear-gradient(135deg, #f4c542, #ffdd72);
       color: #111111;
-      padding: 18px 34px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 19px 34px;
+      border-radius: 10px;
+      font-weight: 900;
       font-size: 18px;
-      transition: 0.2s;
+      box-shadow: 0 0 35px rgba(244, 197, 66, 0.28);
+      transition: all 0.2s ease;
     }
 
     .btn:hover {
-      background: #ffd866;
-      transform: scale(1.03);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 45px rgba(244, 197, 66, 0.42);
     }
 
-    .warning {
-      margin-top: 16px;
+    .under-btn {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #bfbfbf;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.12;
+      margin-bottom: 20px;
+      letter-spacing: -0.8px;
+    }
+
+    .lead {
+      font-size: 19px;
+      color: #d4d4d4;
+      max-width: 850px;
+      margin: 0 auto 28px;
+    }
+
+    .dark-card {
+      background: linear-gradient(180deg, #151515, #0e0e0e);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 22px;
+      padding: 36px;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.35);
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 34px;
+    }
+
+    .pain {
+      background: #101010;
+      border: 1px solid rgba(244, 197, 66, 0.16);
+      border-radius: 18px;
+      padding: 26px;
+      text-align: left;
+    }
+
+    .pain span {
+      display: inline-flex;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(244, 197, 66, 0.12);
+      color: #f4c542;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .pain h3 {
+      color: #ffffff;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .pain p {
+      color: #cfcfcf;
+      font-size: 16px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .quote-box {
+      background: radial-gradient(circle at top left, rgba(244,197,66,0.18), transparent 42%), #111;
+      border: 1px solid rgba(244, 197, 66, 0.25);
+      border-radius: 24px;
+      padding: 34px;
+    }
+
+    .quote-box p {
+      font-size: 22px;
+      color: #f1f1f1;
+      font-weight: 700;
+    }
+
+    .check-list {
+      list-style: none;
+      margin-top: 22px;
+    }
+
+    .check-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: #dddddd;
+      font-size: 18px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      color: #f4c542;
+      font-weight: 900;
+      margin-right: 10px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .step {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px;
+      padding: 24px;
+      text-align: left;
+    }
+
+    .step strong {
+      color: #f4c542;
+      font-size: 15px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: #cfcfcf;
+      font-size: 15px;
+    }
+
+    .offer {
+      background:
+        linear-gradient(135deg, rgba(244,197,66,0.16), transparent 35%),
+        linear-gradient(180deg, #121212, #070707);
+      border-top: 1px solid rgba(244,197,66,0.22);
+      border-bottom: 1px solid rgba(244,197,66,0.22);
+    }
+
+    .offer-box {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      border: 1px solid rgba(244,197,66,0.28);
+      border-radius: 26px;
+      padding: 44px 32px;
+      background: rgba(0,0,0,0.35);
+      box-shadow: 0 0 70px rgba(244,197,66,0.11);
+    }
+
+    .cta-title {
+      font-size: clamp(32px, 5vw, 54px);
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+
+    .cta-text {
+      font-size: 20px;
+      color: #dedede;
+      max-width: 760px;
+      margin: 0 auto 30px;
+    }
+
+    .small-alert {
+      max-width: 760px;
+      margin: 22px auto 0;
       font-size: 14px;
       color: #bdbdbd;
     }
 
-    .section {
-      padding: 60px 0;
+    .faq {
+      max-width: 900px;
+      margin: 36px auto 0;
     }
 
-    .dark-box {
-      background: #171717;
+    .faq-item {
+      background: #111;
       border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 35px;
-      margin-bottom: 28px;
-    }
-
-    h2 {
-      font-size: 34px;
-      margin-bottom: 18px;
-      color: #f5c542;
-    }
-
-    .text {
-      font-size: 18px;
-      color: #d6d6d6;
-      margin-bottom: 18px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: #171717;
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 26px;
       border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 14px;
     }
 
-    .card h3 {
-      color: #f5c542;
-      margin-bottom: 12px;
-      font-size: 22px;
+    .faq-item h3 {
+      color: #f4c542;
+      margin-bottom: 8px;
+      font-size: 20px;
     }
 
-    .card p {
+    .faq-item p {
       color: #d0d0d0;
       font-size: 16px;
     }
 
-    .video-box {
-      background: #000000;
-      border: 1px solid rgba(245,197,66,0.35);
-      border-radius: 18px;
-      padding: 60px 20px;
-      text-align: center;
-      margin-top: 25px;
-    }
-
-    .video-box h3 {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .video-box p {
-      color: #cfcfcf;
-      margin-bottom: 24px;
-    }
-
-    .offer {
-      background: linear-gradient(135deg, #1c1608, #0d0d0d);
-      border-top: 1px solid rgba(245,197,66,0.3);
-      border-bottom: 1px solid rgba(245,197,66,0.3);
-      text-align: center;
-    }
-
-    .offer ul {
-      list-style: none;
-      max-width: 650px;
-      margin: 25px auto;
-      text-align: left;
-    }
-
-    .offer li {
-      padding: 12px 0;
-      color: #e6e6e6;
-      font-size: 18px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .offer li::before {
-      content: "✓ ";
-      color: #f5c542;
-      font-weight: bold;
-    }
-
     footer {
-      padding: 30px 0;
+      padding: 34px 0 90px;
       text-align: center;
-      color: #999999;
-      font-size: 14px;
-      background: #090909;
+      background: #050505;
+      color: #999;
+      font-size: 13px;
     }
 
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 34px;
-      }
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 12px;
+      background: rgba(7,7,7,0.94);
+      border-top: 1px solid rgba(244,197,66,0.25);
+      z-index: 200;
+    }
 
-      .hero p {
-        font-size: 18px;
-      }
+    .sticky-cta a {
+      display: block;
+      text-align: center;
+      background: linear-gradient(135deg, #f4c542, #ffdd72);
+      color: #111;
+      font-weight: 900;
+      padding: 15px;
+      border-radius: 10px;
+    }
 
-      .grid {
+    @media (max-width: 900px) {
+      .pain-grid,
+      .steps,
+      .split {
         grid-template-columns: 1fr;
       }
 
+      .header-content {
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 70px 0 55px;
+      }
+
       .section {
-        padding: 45px 0;
+        padding: 55px 0;
+      }
+
+      .sticky-cta {
+        display: block;
+      }
+
+      .mini-btn {
+        display: none;
       }
     }
   </style>
@@ -214,103 +412,229 @@
 <body>
 
   <header>
-    <div class="container">
-      <div class="logo">Código de Deus</div>
+    <div class="container header-content">
+      <div class="logo">O Mapa do Código</div>
+      <a class="mini-btn" href="https://go.hotmart.com/W105412401D?ap=aef6">Acessar agora</a>
     </div>
   </header>
 
   <section class="hero">
     <div class="container">
-      <span class="tag">Clareza bíblica • Direção espiritual • Entendimento</span>
+      <span class="tag">Uma jornada de clareza, prosperidade e transformação interior</span>
 
-      <h1>Você lê a Bíblia, mas sente que ainda não entende como deveria?</h1>
+      <h1>
+        O código que pode destravar sua vida
+        <span class="gold">não está fora de você.</span>
+      </h1>
 
-      <p>
-        Descubra um método simples para organizar sua leitura, interpretar melhor as Escrituras
-        e enxergar o texto bíblico com mais clareza, contexto e propósito.
+      <p class="hero-text">
+        Imagine ter em mãos um mapa que não aponta para um tesouro externo,
+        mas para o poder escondido dentro de você. O Mapa do Código foi criado
+        para quem está cansado de tentar mudar a vida no escuro e quer finalmente
+        enxergar o caminho com clareza.
       </p>
 
-      <a class="btn" href="#video">Assistir apresentação agora</a>
+      <a class="btn" href="https://go.hotmart.com/W105412401D?ap=aef6">
+        Quero ativar meu código agora
+      </a>
 
-      <div class="warning">
-        Uma explicação direta para quem deseja sair da confusão e ler a Bíblia com mais entendimento.
+      <p class="under-btn">
+        Acesse a apresentação e descubra como funciona o método.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container center">
+      <h2>Você sente que está fazendo força, mas continua travado?</h2>
+
+      <p class="lead">
+        Muitas pessoas não estão paradas por falta de vontade. Elas estão paradas
+        porque continuam tentando prosperar, decidir, evoluir e manifestar uma nova realidade
+        usando uma mente confusa, sobrecarregada e sem direção.
+      </p>
+
+      <div class="pain-grid">
+        <div class="pain">
+          <span>1</span>
+          <h3>Confusão interna</h3>
+          <p>
+            Você quer mudar, mas parece que sempre volta para os mesmos ciclos,
+            os mesmos pensamentos e os mesmos bloqueios.
+          </p>
+        </div>
+
+        <div class="pain">
+          <span>2</span>
+          <h3>Energia travada</h3>
+          <p>
+            Você começa animado, mas perde força no caminho. A vida parece pesada,
+            sem fluxo, sem clareza e sem movimento.
+          </p>
+        </div>
+
+        <div class="pain">
+          <span>3</span>
+          <h3>Prosperidade distante</h3>
+          <p>
+            Enquanto algumas pessoas avançam com facilidade, você sente que precisa lutar
+            muito mais para sair do lugar.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <div class="container">
+    <div class="container split">
+      <div>
+        <h2>O Mapa do Código acende a luz onde antes havia confusão.</h2>
 
-      <div class="dark-box">
-        <h2>O problema não é falta de fé. É falta de método.</h2>
-        <p class="text">
-          Muitas pessoas começam a ler a Bíblia com vontade, mas param porque não sabem por onde começar,
-          como entender o contexto ou como aplicar corretamente o que estão lendo.
+        <p class="lead" style="margin: 0 0 20px;">
+          Aqui você não recebe teorias soltas. Você acessa uma jornada prática,
+          profunda e organizada para compreender os códigos invisíveis que influenciam
+          sua mente, sua energia, sua paz, sua prosperidade e sua capacidade de agir com direção.
         </p>
-        <p class="text">
-          O Código de Deus foi criado para ajudar você a organizar esse processo de forma simples,
-          clara e prática.
-        </p>
+
+        <ul class="check-list">
+          <li>Mais clareza para entender o que estava te bloqueando.</li>
+          <li>Mais consciência para interromper padrões repetidos.</li>
+          <li>Mais direção para sair do automático e agir com propósito.</li>
+          <li>Mais estabilidade emocional para não viver refém do caos.</li>
+        </ul>
       </div>
 
-      <div class="grid">
-        <div class="card">
-          <h3>1. Clareza</h3>
-          <p>Entenda o texto com mais ordem, sem depender de interpretações confusas.</p>
-        </div>
-
-        <div class="card">
-          <h3>2. Contexto</h3>
-          <p>Aprenda a observar o cenário, o propósito e a mensagem central das passagens.</p>
-        </div>
-
-        <div class="card">
-          <h3>3. Aplicação</h3>
-          <p>Transforme sua leitura em entendimento prático para sua vida espiritual.</p>
-        </div>
+      <div class="quote-box">
+        <p>
+          “É como ligar uma lanterna em um quarto que sempre pareceu confuso.
+          De repente, tudo começa a fazer sentido.”
+        </p>
       </div>
-
     </div>
   </section>
 
-  <section class="section" id="video">
+  <section class="section center">
     <div class="container">
-      <div class="video-box">
-        <h3>Assista à apresentação</h3>
-        <p>
-          Veja como funciona o método e entenda por que tantas pessoas leem a Bíblia,
-          mas poucas conseguem interpretá-la com profundidade.
-        </p>
+      <h2>O que você vai descobrir nessa jornada</h2>
 
-        <a class="btn" href="COLE_AQUI_O_LINK_DA_SUA_VSL_OU_CHECKOUT">
-          Continuar para a apresentação
-        </a>
+      <p class="lead">
+        O Mapa do Código conduz você por uma experiência de entendimento,
+        reprogramação e ativação interior.
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <strong>PASSO 01</strong>
+          <h3>Reconhecer</h3>
+          <p>
+            Identifique os padrões mentais e emocionais que estão mantendo você preso.
+          </p>
+        </div>
+
+        <div class="step">
+          <strong>PASSO 02</strong>
+          <h3>Reprogramar</h3>
+          <p>
+            Comece a substituir caos, medo e repetição por clareza, foco e intenção.
+          </p>
+        </div>
+
+        <div class="step">
+          <strong>PASSO 03</strong>
+          <h3>Ativar</h3>
+          <p>
+            Aprenda a direcionar sua energia para atrair oportunidades e movimento.
+          </p>
+        </div>
+
+        <div class="step">
+          <strong>PASSO 04</strong>
+          <h3>Manifestar</h3>
+          <p>
+            Entre em uma nova postura interna para viver com mais propósito e abundância.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="section offer">
     <div class="container">
-      <h2>O que você vai encontrar</h2>
+      <div class="offer-box">
+        <h2 class="cta-title">
+          O código sempre esteve em você.
+          <span class="gold">Agora é hora de ativá-lo.</span>
+        </h2>
 
-      <ul>
-        <li>Um caminho mais simples para começar a entender a Bíblia.</li>
-        <li>Um método organizado para evitar interpretações soltas.</li>
-        <li>Uma forma mais clara de conectar contexto, texto e aplicação.</li>
-        <li>Uma leitura com mais direção, propósito e profundidade.</li>
-      </ul>
+        <p class="cta-text">
+          Se você sente que nasceu para mais, que sua vida não pode continuar no mesmo lugar
+          e que chegou a hora de ter clareza, direção e movimento, essa apresentação pode ser
+          o próximo passo da sua jornada.
+        </p>
 
-      <a class="btn" href="COLE_AQUI_O_LINK_DA_SUA_VSL_OU_CHECKOUT">
-        Quero acessar agora
+        <a class="btn" href="https://go.hotmart.com/W105412401D?ap=aef6">
+          Acessar o Mapa do Código
+        </a>
+
+        <p class="small-alert">
+          Você será redirecionado para a página oficial de apresentação do produto.
+          Os resultados dependem da aplicação, comprometimento e experiência individual de cada pessoa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container center">
+      <h2>Para quem é o Mapa do Código?</h2>
+
+      <div class="faq">
+        <div class="faq-item">
+          <h3>É para quem sente que está vivendo no automático.</h3>
+          <p>
+            Pessoas que querem parar de apenas sobreviver e começar a viver com mais consciência,
+            propósito e direção.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>É para quem busca prosperidade com clareza.</h3>
+          <p>
+            Não apenas dinheiro, mas uma vida com mais paz, energia, foco, oportunidades e movimento.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>É para quem está pronto para mudar por dentro.</h3>
+          <p>
+            Porque toda transformação real começa quando você muda a forma como pensa,
+            sente, decide e age.
+          </p>
+        </div>
+      </div>
+
+      <br />
+
+      <a class="btn" href="https://go.hotmart.com/W105412401D?ap=aef6">
+        Quero ver a apresentação agora
       </a>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      © 2026 Código de Deus. Todos os direitos reservados.
+      © 2026 O Mapa do Código. Todos os direitos reservados.
+      <br><br>
+      Esta página é uma página informativa de apresentação. Não prometemos resultados financeiros,
+      espirituais ou pessoais garantidos. Os resultados variam de pessoa para pessoa.
     </div>
   </footer>
+
+  <div class="sticky-cta">
+    <a href="https://go.hotmart.com/W105412401D?ap=aef6">
+      Acessar o Mapa do Código
+    </a>
+  </div>
 
 </body>
 </html>
